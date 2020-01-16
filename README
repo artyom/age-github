@@ -1,0 +1,13 @@
+age-github command is a wrapper to filippo.io/age tool which expands
+recipients in -r @username format to first ssh key of github user
+"username", fetching keys from https://github.com/username.keys endpoint.
+
+It caches keys for 1 hour in "age-github" subdirectory under os.UserCacheDir
+directory.
+
+Github user handles should have @ prefix, i.e. to encrypt file for
+https://github.com/artyom user, you call it as
+
+    age-github -r @artyom ...
+
+All other flags/arguments are passed unmodified.
